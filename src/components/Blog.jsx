@@ -46,23 +46,24 @@ const Blog = () => {
                 {article.title}
               </h1>
               <p>{article.description}</p>
-              <div className="flex items-center gap-2 mt-4">
-                <img
-                  src={article.user.profile_image}
-                  alt={article.user.name}
-                  className="w-10 h-10 rounded-full"
-                />
-                <p className="font-medium flex items-center">
-                  {article.user.name}
-                </p>
-              </div>
-              <div className="text-sm">
-                <div className="flex flex-row gap-20">
-                  <p className="">{article.readable_publish_date}</p>
-                  <p className="text-sm text-gray-400">
-                    {article.reading_time_minutes}min read
-                  </p>
-                  <p>{article.positive_reactions_count}</p>
+              <div className="border-t border-gray-200 mt-4 py-4 flex justify-between items-center ">
+                <div className="flex items-center gap-3">
+                  <img
+                    src={article.user.profile_image}
+                    alt={article.user.name}
+                    className="w-8 h-8 rounded-full"
+                  />
+
+                  <div>
+                    <p className="font-medium text-sm">{article.user.name}</p>
+                    <p className="text-xs text-gray-400">
+                      {article.readable_publish_date}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 text-sm text-gray-500">
+                  <span>{article.reading_time_minutes}min read</span>
+                  <span>{article.positive_reactions_count}</span>
                 </div>
               </div>
             </div>
